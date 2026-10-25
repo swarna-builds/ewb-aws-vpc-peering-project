@@ -31,4 +31,21 @@ This project demonstrates secure cross-VPC communication using **AWS VPC Peering
 
 ---
 
-* Comprehensive project report available under the /report/ directory: Swarna_EWB_VPC_Peering.pdf
+## 2. Subnet CIDRs and Route Table Associations
+* **VPC A Private Route Table (`rtb-vpcA-private`):** Associated with VPC A private subnets. Includes static route `10.20.0.0/16` pointing to peering connection `pcx-0f0d76bc8799945b3`.
+* **VPC B Private Route Table (`rtb-vpcB-private`):** Associated with VPC B private subnets. Includes static route `10.10.0.0/16` pointing to peering connection `pcx-0f0d76bc8799945b3`.
+* **VPC A Public Route Table (`rtb-vpcA-public`):** Associated with public subnet containing the Bastion host, routing `0.0.0.0/0` via Internet Gateway.
+
+---
+
+## 3. Verification, Testing Evidence & Rubric Requirements
+* **Baseline Failure:** Initial ping from App-A (`10.10.2.10`) to App-B (`10.20.1.10`) failed due to missing cross-VPC route entries.
+* **Forward & Reverse Ping Success:** Post-routing configuration, continuous ping tests confirmed **0% packet loss** in both directions (App-A $\rightarrow$ App-B and App-B $\rightarrow$ App-A).
+* **App-B SSH Proof:** Verified secure administrative access via SSH ProxyJump (`ssh -J ec2-user@10.10.1.10 ec2-user@10.20.1.10`).
+* **Controlled ICMP Failure & Recovery:** Temporarily removing the return route in VPC B caused request timeouts; re-adding the route instantly restored connectivity.
+
+---
+
+## 4. Cleanup & Key Learnings
+* **Cleanup Note:** Peering connection, route tables, and test instances were properly terminated post-validation following cloud hygiene best practices.
+* **Key Learnings:** Gained deep proficiency in AWS networking, VPC peering non-transitive nature, route propagation, and secure tunneling.
