@@ -30,11 +30,3 @@ This project demonstrates secure cross-VPC communication using **AWS VPC Peering
 | **VPC Peering** | `ewb-a-b-peer` | `pcx-0f0d76bc8799945b3` | VPC A ⟷ VPC B |
 
 ---
-
-## 📸 Verification & Testing Evidence
-
-### 1. Active VPC Peering Connection
-![Peering Connection](03-peering-active.jpg)
-
-### 2. Successful Cross-VPC Ping Test (0% Packet Loss)
-![Ping Success](05-forward-ping-success.jpg)
