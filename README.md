@@ -34,7 +34,7 @@ This project demonstrates secure cross-VPC communication using **AWS VPC Peering
 ## 📸 Verification & Testing Evidence
 
 ### 1. Active VPC Peering Connection
-![Peering Connection](./screenshots/03-peering-active.png)
+![Peering Connection](03-peering-active.jpg)
 
 ### 2. Successful Cross-VPC Ping Test (0% Packet Loss)
-![Ping Success](./screenshots/05-forward-ping-success.png)
+![Ping Success](05-forward-ping-success.jpg)
