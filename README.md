@@ -30,3 +30,5 @@ This project demonstrates secure cross-VPC communication using **AWS VPC Peering
 | **VPC Peering** | `ewb-a-b-peer` | `pcx-0f0d76bc8799945b3` | VPC A ⟷ VPC B |
 
 ---
+
+* Comprehensive project report available under the /report/ directory: Swarna_EWB_VPC_Peering.pdf
